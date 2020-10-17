@@ -32,10 +32,11 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 2. Node: 12.14.0
 3. .Net Core 3.1
 4. Elasticsearch 7.4 can be found here: https://www.elastic.co/downloads/past-releases/elasticsearch-7-4-0 just download and uzip then install plugins:
-	* ingest-attachment, run command:
-    ./elasticsearch-plugin install ingest-attachment
+	* ingest-attachment, execute    
+        ./elasticsearch-plugin install ingest-attachment
 	* serbian-analyzer, download and instructions are available here:
-    https://github.com/markomartonosi/udd06/tree/plugin-update
+    
+        https://github.com/markomartonosi/udd06/tree/plugin-update
 
 ## How to run
 
