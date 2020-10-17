@@ -1,0 +1,99 @@
+<div class="wrapper">
+    <div class="formMinSize">
+        <div>
+            <p class="segmentTitle">Scientific papers search parameters</p>
+            <hr>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f.value)" ngNativateValidate>
+
+                <div>
+                    <div class="input-group mb-3" *ngIf="!mltEnabled">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Magazine title</label>
+                        </div>
+                        <input class="form-control" type="text" name=magazineTitle ngModel>
+                    </div>
+                    <div class="input-group mb-3" *ngIf="!mltEnabled">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Paper title</label>
+                        </div>
+                        <input class="form-control" type="text" name=title ngModel>
+                    </div>
+                    <div class="input-group mb-3" *ngIf="!mltEnabled">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Author firstname</label>
+                        </div>
+                        <input class="form-control" type="text" name=authorFirstname ngModel>
+                    </div>
+                    <div class="input-group mb-3" *ngIf="!mltEnabled">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Author lastname</label>
+                        </div>
+                        <input class="form-control" type="text" name=authorLastname ngModel>
+                    </div>
+                    <div class="input-group mb-3" *ngIf="!mltEnabled">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Keywords</label>
+                        </div>
+                        <input class="form-control" type="text" name=keyword ngModel>
+                    </div>
+                    <div class="input-group mb-3" *ngIf="!mltEnabled">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Scientific fields</label>
+                        </div>
+                        <input class="form-control" type="text" name=scientificField ngModel>
+                    </div>
+                    <div class="input-group mb-3" *ngIf="!mltEnabled">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Content</label>
+                        </div>
+                        <input class="form-control" type="text" name=content ngModel>
+                    </div>
+                    <div class="input-group mb-3" *ngIf="!mltEnabled">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Match papers that meet   all criteria</label>
+                        </div>
+                        <input class="checkbox" type="checkbox" name=operation ngModel>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">More like this query</label>
+                        </div>
+                        <input class="checkbox" type="checkbox" name=moreLikeThisEnabled (click)=mltUpdate() ngModel>
+                    </div>
+                    <div class="input-group mb-3" *ngIf="mltEnabled">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Query</label>
+                        </div>
+                        <input class="form-control" type="text" name=moreLikeThisQuery ngModel>
+                    </div>
+                </div>
+
+                <br />
+                <div>
+                    <button type="submit " class="btn btn-primary-green btn-m2 floatright minBtnSize ">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="resultsSegment">
+        <p class="segmentTitle">Search query results</p>
+        <hr>
+        <div class="results">
+            <div *ngFor="let result of searchResults; let i = index" [attr.data-index]="i">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text result" for={{result.title}}>
+                            <div>
+                                <div class="resultField"><a href="{{result.downloadLink}}">{{i+1}}.
+                                        {{result.title}}</a></div>
+                                <hr>
+                                <div class="resultField" [innerHTML]="result.highlight"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

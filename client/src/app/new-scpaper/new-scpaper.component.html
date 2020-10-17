@@ -1,0 +1,65 @@
+<div class="wrapper">
+    <div class="formMinSize">
+        <div>
+            <p class="segmentTitle">Add scientific paper</p>
+            <hr>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f.value)" ngNativateValidate>
+
+                <div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Magazine title</label>
+                        </div>
+                        <input class="form-control" type="text" name=magazineTitle ngModel>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Paper title</label>
+                        </div>
+                        <input class="form-control" type="text" name=title ngModel>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Author firstname</label>
+                        </div>
+                        <input class="form-control" type="text" name=authorFirstname ngModel>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Author lastname</label>
+                        </div>
+                        <input class="form-control" type="text" name=authorLastname ngModel>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Keywords</label>
+                        </div>
+                        <input class="form-control" type="text" name=keyword ngModel>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">Scientific fields</label>
+                        </div>
+                        <input class="form-control" type="text" name=scientificField ngModel>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text">PDF</label>
+                        </div>
+                        <label class="form-control"> {{selectedFileName}} </label>
+                        <button class="btn btn-primary minBtnSize btn-lm3" type="button" (click)="fileInput.click()">
+                            <span>Browse</span>
+                            <input #fileInput type="file" name=PDF (change)="handleFileInput($event.target.files)" ngModel class="upload-btn" accept="application/pdf"/>
+                        </button>
+                    </div>
+                </div>
+
+                <br />
+                <div>
+                    <button type="submit" class="btn floatright minBtnSize btn-primary-green">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
