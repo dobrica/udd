@@ -32,30 +32,28 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 2. Node: 12.14.0
 3. .Net Core 3.1
 4. Elasticsearch 7.4 can be found here: 
-    ```
     https://www.elastic.co/downloads/past-releases/elasticsearch-7-4-0
-    ```
     just download and uzip then install plugins:
     1. ingest-attachment, execute
 		```
         ./elasticsearch-plugin install ingest-attachment
         ```
 	2. serbian-analyzer, download and instructions are available here:
-		```
         https://github.com/markomartonosi/udd06/tree/plugin-update 
-        ```
 
 ## How to run
 
 - start elasticsearch from, default port is 9200
     ```
-    cd <Path-to-installation-bin-folder>
+    cd <path-to-installation-folder/bin>
     ./elasticsearch
     ```
 - run .Net service
     - optional: to add and index test data: 
 	GET https://localhost:44370/testdata
-- for client app run 
+- to start Angular client app, default port 4200 http://localhost:4200/
+    ```
 	- npm install -g @angular/cli, only firstime
 	- npm update, only firstime
-	- ng serve to start Angular client app, default port 4200 http://localhost:4200/
+	- ng serve 
+   ``` 
