@@ -31,8 +31,12 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 1. Angular CLI: 9.1.12
 2. Node: 12.14.0
 3. .Net Core 3.1
-4. Elasticsearch 7.4 can be found here: https://www.elastic.co/downloads/past-releases/elasticsearch-7-4-0 just download and uzip then install plugins:
-	1. ingest-attachment, execute
+4. Elasticsearch 7.4 can be found here: 
+    ```
+    https://www.elastic.co/downloads/past-releases/elasticsearch-7-4-0
+    ```
+    just download and uzip then install plugins:
+    1. ingest-attachment, execute
 		```
         ./elasticsearch-plugin install ingest-attachment
         ```
@@ -43,7 +47,11 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 
 ## How to run
 
-- start elasticsearch, default port 9200
+- start elasticsearch from, default port is 9200
+    ```
+    cd <Path-to-installation-bin-folder>
+    ./elasticsearch
+    ```
 - run .Net service
     - optional: to add and index test data: 
 	GET https://localhost:44370/testdata
