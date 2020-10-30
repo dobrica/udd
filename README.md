@@ -26,7 +26,7 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 * dynamic highlighter for search results
 * link to download and preview PDF files
 
-## Requirements and Installation
+### Requirements and Installation
 
 1. Angular CLI: 9.1.12
 2. Node: 12.14.0
