@@ -26,16 +26,16 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 * dynamic highlighter for search results
 * link to download and preview PDF files
 
-### Requirements and Installation
+## Requirements and Installation
 
 1. Angular CLI: 9.1.12
 2. Node: 12.14.0
 3. .Net Core 3.1
 4. Elasticsearch 7.4 can be found here: https://www.elastic.co/downloads/past-releases/elasticsearch-7-4-0 just download and uzip then install plugins:
 	1. ingest-attachment, execute
-		./elasticsearch-plugin install ingest-attachment
+		``` ./elasticsearch-plugin install ingest-attachment ```
 	2. serbian-analyzer, download and instructions are available here:
-		https://github.com/markomartonosi/udd06/tree/plugin-update
+		``` https://github.com/markomartonosi/udd06/tree/plugin-update ```
 
 ## How to run
 
