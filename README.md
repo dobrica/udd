@@ -45,7 +45,7 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 
 - start elasticsearch from, default port is 9200
     ```
-    cd <path-to-installation-folder/bin>
+    cd <path-to-installation-folder>/bin
     ./elasticsearch
     ```
 - run .Net service
@@ -53,7 +53,7 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 	GET https://localhost:44370/testdata
 - to start Angular client app, default port 4200 http://localhost:4200/
     ```
-	- npm install -g @angular/cli, only firstime
-	- npm update, only firstime
+	- only firstime: npm install -g @angular/cli
+	- only firstime: npm update
 	- ng serve 
    ``` 
