@@ -163,7 +163,8 @@ namespace udd
 
             if (!dbContext.ScientificPapers.Any())
             {
-                string script = File.ReadAllText(@".\Database\InitDb.sql");
+                char separator = Path.DirectorySeparatorChar;
+                string script = File.ReadAllText($".{separator}Database{separator}InitDb.sql");
                 dbContext.Database.ExecuteSqlRaw(script);
             }
             else

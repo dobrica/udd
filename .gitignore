@@ -2,3 +2,4 @@ service/.vs
 service/udd/bin/*
 service/udd/obj/*
 service/udd/ScientificCenterDatabase.db
+service/.vscode
