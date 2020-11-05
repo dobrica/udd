@@ -114,7 +114,7 @@ namespace udd.Controllers
         {
             ScientificPaper sp = dbContext.ScientificPapers.FirstOrDefault(s => s.Id.Equals(id));
             char separator = Path.DirectorySeparatorChar;
-            string filepath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"..{separator}..{separator}..{separator}files{separator}", sp.PdfFileName));
+            string filepath = Path.GetFullPath(Path.Combine($"files{separator}", sp.PdfFileName));
 
             return new PhysicalFileResult(filepath, "application/pdf");
         }
