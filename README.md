@@ -28,10 +28,11 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 
 ## Requirements and Installation
 
-1. Angular CLI: 9.1.12
-2. Node: 12.14.0
-3. .Net Core 3.1
-4. Elasticsearch 7.4 can be found here: 
+1. Java 13
+2. Angular CLI: 9.1.12
+3. Node: 12.14.0
+4. .Net Core 3.1
+5. Elasticsearch 7.4 can be found here: 
     https://www.elastic.co/downloads/past-releases/elasticsearch-7-4-0
     just download and uzip then install plugins:
     1. ingest-attachment, execute
@@ -40,6 +41,14 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
         ```
 	2. serbian-analyzer, download and instructions are available here:
         https://github.com/markomartonosi/udd06/tree/plugin-update 
+		
+## Quick start 
+- Requirements Docker
+- Download Dockerfile
+- (sudo) docker build -t scientific-center
+- (sudo) docker run -dt -p 4200:4200 -p 9200:9200 -p 44370:44370 --name sc-test scientific-center
+- http://localhost:44370/testdata
+- http://localhost:4200
 
 ## How to run
 
