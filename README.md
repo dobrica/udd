@@ -45,7 +45,7 @@ integrating Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 ## Quick start 
 - Requirements Docker
 - Download Dockerfile
-- (sudo) docker build -t scientific-center
+- (sudo) docker build -t scientific-center .
 - (sudo) docker run -dt -p 4200:4200 -p 9200:9200 -p 44370:44370 --name sc-test scientific-center
 - http://localhost:44370/testdata
 - http://localhost:4200
