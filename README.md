@@ -29,17 +29,18 @@ Elasticsearch and RDB (SQLite), it is implemented using .Net core.
 ## Quick deploy  
 
 - Requirements: installed Docker
-- Build Docker image using Dockerfile from repo. It is based on Ubuntu 18.04 so it can be run on Linux or Windows.
+- Build Docker image using Dockerfile from repo. It is based on Ubuntu 18.04 so it can be run on Linux or Windows
 - Steps:
     - Download Dockerfile: https://github.com/dobrica/udd/blob/master/Dockerfile
     ```
-    sudo docker build -t scientific-center .
+    1. cd <path-to-Dockerfile>
+    2. sudo docker build -t scientific-center .
     ```
     ```
     sudo docker run -dt -p 4200:4200 -p 9200:9200 -p 44370:44370 --name sc-test scientific-center
     ```
-    - wait few moments until services are up 
-    - visit https://localhost:44370/testdata and accept self signed cert. 
+    - wait few moments until services are up
+    - visit https://localhost:44370/testdata and accept self-signed certificate
     - client app is on http://localhost:4200
 
 ## Development environment setup requirements
