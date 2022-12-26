@@ -10,12 +10,13 @@ ENV LANG en_US.UTF-8
 RUN wget -nv --show-progress --progress=bar:force:noscroll https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz
 RUN sudo chmod 775 openjdk-13.0.1_linux-x64_bin.tar.gz
 RUN sudo tar xfz openjdk-13.0.1_linux-x64_bin.tar.gz
+RUN sudo rm openjdk-13.0.1_linux-x64_bin.tar.gz
 # Export JAVA_HOME
 ENV JAVA_HOME /jdk-13.0.1
 ENV PATH $PATH:$JAVA_HOME/bin
 
 # Install nodejs
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN sudo apt-get install -y nodejs
 
 # Install dotnetcore
@@ -25,11 +26,13 @@ RUN sudo apt-get update; \
   sudo apt-get install -y apt-transport-https && \
   sudo apt-get update && \
   sudo apt-get install -y dotnet-sdk-3.1
+RUN sudo rm packages-microsoft-prod.deb 
 
 # Install elastic
 RUN wget -nv --show-progress --progress=bar:force:noscroll https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.0-linux-x86_64.tar.gz
 RUN sudo chmod 775 elasticsearch-7.4.0-linux-x86_64.tar.gz
 RUN tar xfz elasticsearch-7.4.0-linux-x86_64.tar.gz 
+RUN sudo rm elasticsearch-7.4.0-linux-x86_64.tar.gz
 
 # Export ELASTIC_HOME
 ENV ELASTIC_HOME /elasticsearch-7.4.0
@@ -43,6 +46,7 @@ RUN printf "\ndiscovery.type: single-node\
 RUN wget -nv --show-progress --progress=bar:force:noscroll https://github.com/markomartonosi/udd06/archive/plugin-update.zip
 RUN sudo chmod 775 plugin-update.zip 
 RUN unzip plugin-update.zip 
+RUN sudo rm plugin-update.zip 
 
 # Build serbian-analyzer
 RUN   echo "// UTF-8 \n\
