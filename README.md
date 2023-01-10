@@ -30,7 +30,7 @@ Elasticsearch and RDB (SQLite), it is implemented using .Net core.
     - contents of attached PDF file
     - combination of previous parameters using BooleanQuery (AND/OR operator)
     - support for PhrazeQuery
-* query preprocessing with serbian-analyzer
+* query preprocessing with serbian-analyzer (offers cyrillic and/or latin results, no matter which script was used for typing in search parameters)
 * dynamic highlighter for search results
 * link to download and preview PDF files
 
@@ -53,6 +53,7 @@ Elasticsearch and RDB (SQLite), it is implemented using .Net core.
     - wait few moments until services are up
     - visit https://localhost:44370/testdata and accept self-signed certificate
     - client app is on http://localhost:4200
+    - test data is limited, try searchnig by Paper title with "Bayes" or "Bajesova", or by keyword with "Bayes probability" or "Bajesova verovatnoca"
 
 ## **Development environment setup requirements**
 
